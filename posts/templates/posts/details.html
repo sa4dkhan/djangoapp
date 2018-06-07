@@ -2,6 +2,7 @@
 {% block content %}
 <h3 class="center-align red lighten-3">{{ post.title }}</h3>
 <div class="card">
+    <div><img src="{{ post.thumb.url }}" alt=""></div>
     <div class="card-content">
         {{ post.body }}
     </div>

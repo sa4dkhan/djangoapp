@@ -9,7 +9,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('index')
+            return redirect('posts:list')
     else:
         form = UserCreationForm()
     data = {'form': form}
@@ -22,7 +22,10 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('index')
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('posts:list')
     else:
         form = AuthenticationForm()
     data = {'form': form}
@@ -32,7 +35,7 @@ def login_view(request):
 def logout_view(request):
     if request.method == 'POST':
         logout(request)
-        return redirect('index')
+        return redirect('posts:list')
 
 
 

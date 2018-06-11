@@ -12,6 +12,7 @@
 <body>
     <header class="container center-align">
         <h1>Blog</h1>
+        <a href="{% url 'posts:list' %}">Posts</a>
     </header>
 
     <div class="container">
@@ -19,6 +20,10 @@
         {% endblock %}
         <br>
         <a style="display: block" class="center-align" href="/admin">Admin login</a>
+        <form action="{% url 'accounts:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
 
     </div>
 

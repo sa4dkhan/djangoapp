@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Posts
 from django.contrib.auth.decorators import login_required
+from . import forms
 
 
 def post_list(request):
@@ -25,6 +26,8 @@ def post_details(request, id):
 
 @login_required(login_url="/accounts/login")
 def post_create(request):
-    return render(request, 'posts/create.html')
+    form = forms.CreatePost()
+    data = {'form':form}
+    return render(request, 'posts/create.html', data)
 
 

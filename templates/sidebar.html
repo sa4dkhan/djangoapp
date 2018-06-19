@@ -1,0 +1,43 @@
+{% block sidebar %}
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
+        <div class="main-menu-content">
+            <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
+                <li class=" navigation-header"><span>General</span><i data-toggle="tooltip" data-placement="right" data-original-title="General" class=" ft-minus"></i></li>
+                <li class=" nav-item"><a href="#"><i class="icon-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a></li>
+                <li class=" nav-item"><a href="#"><i class="fa fa-users"></i><span data-i18n="" class="menu-title">Manage Users</span></a></li>
+                <li class=" nav-item"><a href="#"><i class="fa fa-users"></i><span data-i18n="" class="menu-title">Customers</span></a></li>
+                <li class=" nav-item"><a href="#"><i class="fa fa-users"></i><span data-i18n="" class="menu-title">Suppliers</span></a></li>
+                <li class=" nav-item"><a href="#"><i class="fa fa-th-list"></i><span data-i18n="" class="menu-title">Costing Sheet</span></a>
+                    <ul class="menu-content">
+                        <li><a href="#" class="menu-item"><i class="fa fa-plus"></i>Add Costing Sheet</a></li>
+                        <li><a href="#" class="menu-item"><i class="fa fa-tasks"></i>Costing History</a></li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="fa fa-suitcase"></i><span data-i18n="" class="menu-title">Materials</span></a>
+                    <ul class="menu-content">
+                        <li><a href="#" class="menu-item"><i class="fa fa-plus"></i>Add Material</a></li>
+                        <li><a href="#" class="menu-item"><i class="fa fa-tasks"></i>Manage Material</a></li>
+                        <li><a href="#" class="menu-item"><i class="fa fa-qrcode"></i>Category</a>
+                            <ul class="menu-content">
+                                <li><a href="#" class="menu-item"><i class="fa fa-tag"></i>Material category</a></li>
+                                <li><a href="#" class="menu-item"><i class="fa fa-tags"></i>Sub category</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="fa fa-truck"></i><span data-i18n="" class="menu-title">Manage Purchase</span></a>
+                    <ul class="menu-content">
+                        <li><a href="#" class="menu-item"><i class="fa fa-credit-card"></i>Purchase</a>
+                            <ul class="menu-content">
+                                <li><a href="#" class="menu-item"><i class="fa fa-shopping-cart"></i>New Purchase</a></li>
+                                <li><a href="#" class="menu-item"><i class="fa fa-list"></i>Purchase History</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+@media (max-width: 1500px)  {
+
+    .table.dataTable tbody tr td{
+        padding: 7px 8px;
+    }
+
+    .table.dataTable thead tr th{
+        padding: 7px 8px;
+    }
+
+    .add-purchase-table-row .col-md-6{
+        flex: 0 0 100%;
+        max-width: initial;
+    }
+
+}

@@ -39,3 +39,27 @@ def post_create(request):
     return render(request, 'posts/create.html', {'form':form})
 
 
+@login_required(login_url="/accounts/login")
+def update_post(request, id):
+    if request.method == 'POST':
+        post = Posts.objects.get(id=id)
+        form = forms.CreatePost(request.POST or None, request.FILES, instance=post)
+        if form.is_valid():
+            # save article to db
+            form.save()
+            return redirect('posts:list')
+
+    return render(request, 'posts/create.html', {'form':form, 'post': post})\
+
+
+
+@login_required(login_url="/accounts/login")
+def delete_post(request, id):
+    post = Posts.objects.get(id=id)
+    if request.method == 'POST':
+        post.delete()
+        return redirect('posts:list')
+
+    return render(request, 'posts/create.html', {'form':form, 'post': post})
+
+

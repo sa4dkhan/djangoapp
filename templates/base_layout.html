@@ -1,64 +1,31 @@
 {% load static from staticfiles %}
 
-{#<!DOCTYPE html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#    <meta charset="UTF-8">#}
-{#      <!-- Compiled and minified CSS -->#}
-{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">#}
-{#    <link rel="stylesheet" href="{% static 'style.css' %}">#}
-{#    <title>Blog</title>#}
-{#</head>#}
-{#<body>#}
-{#    <header class="container center-align">#}
-{#        <h1>Blog</h1>#}
-{#        <a href="{% url 'posts:list' %}">Posts</a>#}
-{#    </header>#}
-{##}
-{#    <div class="container">#}
-{#        {% block content %}#}
-{#        {% endblock %}#}
-{#        <br>#}
-{#        <a style="display: block" class="center-align" href="/admin">Admin login</a>#}
-{#        <form action="{% url 'accounts:logout' %}" method="post">#}
-{#            {% csrf_token %}#}
-{#            <button type="submit">Logout</button>#}
-{#        </form>#}
-{##}
-{#    </div>#}
-{##}
-{##}
-{#</body>#}
-{#</html>#}
 
 <!DOCTYPE html>
 <html lang="en" data-textdirection="ltr" class="loading">
 
+
 <!-- Head -->
-{#@include('layouts.head')#}
 {% block head %}
     {% include 'head.html' %}
 {% endblock %}
-
 <!-- End Head -->
+
 
 <body data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar">
 
-<!-- Navbar -->
 
-{#@include('layouts.navbar')#}
+<!-- Navbar -->
 {% block navbar %}
     {% include 'navbar.html' %}
 {% endblock %}
 <!-- End Navbar -->
 
-<!-- Sidebar -->
 
-{#@include('layouts.sidebar')#}
+<!-- Sidebar -->
 {% block sidebar %}
     {% include 'sidebar.html' %}
 {% endblock %}
-
 <!-- End Sidebar -->
 
 
@@ -75,22 +42,20 @@
     </div>
 </div>
 
-<!-- Footer -->
 
-{#@include('layouts.footer')#}
+<!-- Footer -->
 {% block footer %}
     {% include 'footer.html' %}
 {% endblock %}
-
 <!-- End Footer -->
 
-<!-- Footerjs -->
 
-{#@include('layouts.footerjs')#}
+<!-- Footerjs -->
 {% block footerjs %}
     {% include 'footerjs.html' %}
 {% endblock %}
 <!-- End Footerjs -->
+
 
 </body>
 </html>

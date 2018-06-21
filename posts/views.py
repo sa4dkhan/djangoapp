@@ -60,6 +60,4 @@ def delete_post(request, id):
         post.delete()
         return redirect('posts:list')
 
-    return render(request, 'posts/create.html', {'form':form, 'post': post})
-
 

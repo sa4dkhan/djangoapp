@@ -2,10 +2,9 @@
 
 {% block content %}
     <h1>Signup</h1>
-    <form action="/accounts/signup/" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <br><br>
-        <input class="btn btn-info" type="submit" value="Submit">
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% include 'includes/bs4_form.html' with form=form %}
+      <button type="submit" class="btn btn-primary">Signup</button>
     </form>
 {% endblock %}

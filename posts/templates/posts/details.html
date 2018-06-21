@@ -3,7 +3,11 @@
 {% block content %}
 <h3 class="center-align red lighten-3">{{ post.title }}</h3>
 <div class="card">
-    <div><img src="{{ post.thumb.url }}" alt=""></div>
+    <div>
+        {% if post.thumb %}
+            <img src="{{ post.thumb.url }}" alt="">
+        {% endif %}
+    </div>
     <div class="card-content">
         {{ post.body }}
     </div>
@@ -16,6 +20,10 @@
 <form action="{% url 'posts:update_post' post.id %}" method="post">
     {% csrf_token %}
     <button type="submit">Update Post</button>
+</form>
+<form action="{% url 'posts:delete_post' post.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
 </form>
 
 {% endblock %}

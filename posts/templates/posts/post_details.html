@@ -17,10 +17,9 @@
 </div>
 <a href="/" class="btn">Go Back</a>
 <br><br>
-<form action="{% url 'posts:update_post' post.id %}" method="post">
-    {% csrf_token %}
-    <button type="submit">Update Post</button>
-</form>
+    <a href="{% url 'posts:update_post' post.id %}">
+        <button class="btn btn-success">Edit Post</button>
+    </a>
 <form action="{% url 'posts:delete_post' post.id %}" method="post">
     {% csrf_token %}
     <button type="submit">Delete</button>

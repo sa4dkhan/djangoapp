@@ -44,7 +44,7 @@
                                 {% if user.is_authenticated %}
                                 <form action="{% url 'accounts:logout' %}" method="post">
                                 {% csrf_token %}
-                                    <a href="{% url 'posts:create' %}" class="dropdown-item" ><i class="ft-plus"></i>New Post</a>
+                                    <a href="{% url 'posts:create_post' %}" class="dropdown-item" ><i class="ft-plus"></i>New Post</a>
                                     <input class="dropdown-item" type="submit" value="Logout">
 
                                 </form>

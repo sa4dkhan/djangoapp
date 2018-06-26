@@ -83,14 +83,25 @@ WSGI_APPLICATION = 'djangoapp.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'djangoapp',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': ''
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangoapp',
-        'USER': 'root',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'lawyerdb',
+        'USER': 'lawyerdb',
+        'PASSWORD': '123',
         'HOST': 'localhost',
-        'PORT': ''
+        'PORT': '1521'
     }
 }
 

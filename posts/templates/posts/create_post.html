@@ -4,8 +4,6 @@
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {% include 'includes/bs4_form.html' with form=form %}
-{#        {{ form }}#}
       <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="button" class="btn btn-lg btn-block btn-outline-primary mb-2" id="position-top-right">Top Right</button>
     </form>
 {% endblock %}

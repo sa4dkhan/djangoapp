@@ -1,4 +1,5 @@
 {% extends 'base_layout.html' %}
+{% load static from staticfiles %}
 
 {% block content %}
 <h3 class="center-align red lighten-3">{{ post.title }}</h3>
@@ -15,14 +16,18 @@
         {{ post.created_at }}
     </div>
 </div>
-<a href="/" class="btn">Go Back</a>
-<br><br>
+    <a href="{% url 'posts:post_list' %}">
+        <button class="btn btn-info">Go Back</button>
+    </a>
+
     <a href="{% url 'posts:update_post' post.id %}">
         <button class="btn btn-success">Edit Post</button>
     </a>
-<form action="{% url 'posts:delete_post' post.id %}" method="post">
-    {% csrf_token %}
-    <button type="submit">Delete</button>
-</form>
+
+    <a href="{% url 'posts:delete_post' post.id %}">
+        <button class="btn btn-warning">Delete Post</button>
+    </a>
+
 
 {% endblock %}
+

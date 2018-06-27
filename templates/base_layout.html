@@ -8,6 +8,11 @@
 <!-- Head -->
 {% block head %}
     {% include 'head.html' %}
+    {% block customcss %}
+        <link rel="stylesheet" type="text/css" href="{% static 'stack/app-assets/vendors/css/extensions/toastr.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'stack/app-assets/css/plugins/extensions/toastr.css' %}">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    {% endblock customcss %}
 {% endblock %}
 <!-- End Head -->
 
@@ -53,7 +58,20 @@
 <!-- Footerjs -->
 {% block footerjs %}
     {% include 'footerjs.html' %}
-{% endblock %}
+    {% block customjs %}
+         <script src="{% static 'stack/app-assets/vendors/js/extensions/toastr.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'stack/app-assets/js/scripts/extensions/toastr.js' %}" type="text/javascript"></script>
+        {% if messages %}
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    {% for message in messages %}
+                        toastr.{{ message.tags }}('{{ message }}', '{{ message.tags }}');
+                    {% endfor%}
+                });
+            </script>
+        {% endif %}
+    {% endblock customjs %}
+{% endblock footerjs %}
 <!-- End Footerjs -->
 
 

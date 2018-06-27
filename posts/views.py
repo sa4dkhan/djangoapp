@@ -34,7 +34,7 @@ def create_post(request):
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
-            messages.error(request, 'Post Successfully Saved!')
+            messages.success(request, 'Your post has been successfully saved!')
             return redirect('posts:post_list')
     else:
         form = forms.CreatePost()
@@ -50,7 +50,7 @@ def update_post(request, id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Your post has been updated!')
-                return redirect('posts:post_details',id)
+                return redirect('posts:post_details', id)
 
         except Exception as e:
             messages.warning(request, 'Your post was not saved due to an error: {}'.format(e))
@@ -68,8 +68,14 @@ def update_post(request, id):
 @login_required(login_url="/accounts/login")
 def delete_post(request, id):
     post = Post.objects.get(id=id)
-    if request.method == 'POST':
-        post.delete()
+    # return HttpResponse(str(post))
+    post.delete()
+    try:
+        messages.success(request, 'Your post has been Deleted!')
         return redirect('posts:post_list')
+
+    except Exception as e:
+        messages.warning(request, 'Your post was not deleted due to an error: {}'.format(e))
+    return redirect('posts:post_list')
 
 
